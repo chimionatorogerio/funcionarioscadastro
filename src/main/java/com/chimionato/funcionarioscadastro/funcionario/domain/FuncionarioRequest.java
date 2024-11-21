@@ -1,7 +1,9 @@
 package com.chimionato.funcionarioscadastro.funcionario.domain;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.Value;
 
+@Value
 public class FuncionarioRequest {
     @NotBlank
     private String nomeCompleto;
