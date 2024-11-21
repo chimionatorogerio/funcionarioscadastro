@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: /funcionariocadastro/api
+    context-path: /funcionarioscadastro/api
 
 
 spring:
