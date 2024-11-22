@@ -1,4 +1,4 @@
-package com.chimionato.funcionarioscadastro.funcionario.domain;
+package com.chimionato.funcionarioscadastro.funcionario.application.api;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Value;

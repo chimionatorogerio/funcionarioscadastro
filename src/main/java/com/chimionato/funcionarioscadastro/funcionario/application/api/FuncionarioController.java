@@ -1,4 +1,4 @@
-package com.chimionato.funcionarioscadastro.funcionario.domain;
+package com.chimionato.funcionarioscadastro.funcionario.application.api;
 
 import com.chimionato.funcionarioscadastro.funcionario.application.service.FuncionarioService;
 import lombok.RequiredArgsConstructor;

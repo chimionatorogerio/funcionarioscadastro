@@ -1,4 +1,4 @@
-package com.chimionato.funcionarioscadastro.funcionario.domain;
+package com.chimionato.funcionarioscadastro.funcionario.application.api;
 
 import lombok.Builder;
 import lombok.Value;
