@@ -1,5 +1,6 @@
 package com.chimionato.funcionarioscadastro.funcionario.domain;
 
+import com.chimionato.funcionarioscadastro.funcionario.application.api.FuncionarioRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
@@ -27,12 +28,11 @@ public class Funcionario {
     @NotBlank
     private String endereco;
 
-    public Funcionario(UUID idFuncionario, String nomeCompleto, String designacao, String salario, String telefone, String endereco) {
-        this.idFuncionario = idFuncionario;
-        this.nomeCompleto = nomeCompleto;
-        this.designacao = designacao;
-        this.salario = salario;
-        this.telefone = telefone;
-        this.endereco = endereco;
+    public Funcionario(FuncionarioRequest funcionarioRequest) {
+        this.nomeCompleto = funcionarioRequest.getNomeCompleto();
+        this.designacao = funcionarioRequest.getDesignacao();
+        this.salario = funcionarioRequest.getSalario();
+        this.telefone = funcionarioRequest.getTelefone();
+        this.endereco = funcionarioRequest.getEndereco();
     }
 }
