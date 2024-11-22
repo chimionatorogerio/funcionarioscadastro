@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class FuncionarioApplicationService implements FuncionarioService {
 
+    private final FuncionarioRepository funcionarioRepository;
+
     @Override
     public FuncionarioResponse postFuncionario(FuncionarioRequest funcionarioRequest) {
         log.info("[inicia]   - FuncionarioApplicationService - postFuncionario");
