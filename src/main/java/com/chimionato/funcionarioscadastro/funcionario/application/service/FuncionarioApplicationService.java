@@ -2,6 +2,7 @@ package com.chimionato.funcionarioscadastro.funcionario.application.service;
 
 import com.chimionato.funcionarioscadastro.funcionario.application.api.FuncionarioRequest;
 import com.chimionato.funcionarioscadastro.funcionario.application.api.FuncionarioResponse;
+import com.chimionato.funcionarioscadastro.funcionario.application.repository.FuncionarioRepository;
 import com.chimionato.funcionarioscadastro.funcionario.domain.Funcionario;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
