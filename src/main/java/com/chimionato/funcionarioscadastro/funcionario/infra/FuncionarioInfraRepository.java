@@ -5,7 +5,6 @@ import com.chimionato.funcionarioscadastro.funcionario.domain.Funcionario;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
-import sun.security.krb5.internal.ccache.MemoryCredentialsCache;
 
 @Repository
 @Log4j2
