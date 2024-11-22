@@ -18,6 +18,6 @@ public interface FuncionarioAPI {
     @ResponseStatus(code = HttpStatus.OK)
     List<FuncionarioListResponse> getTodosFuncionarios();
 
-    // Implantar método getUmClientePeloId
+    // Implantar o método getUmClientePeloId
 
 }
