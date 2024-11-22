@@ -6,18 +6,28 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @Log4j2
 @RequiredArgsConstructor
 public class FuncionarioInfraRepository implements FuncionarioRepository {
 
-    private final ClienteSpringDataJPARepository clienteSpringDataJPARepository;
+    private final FuncionarioSpringDataJPARepository funcionarioSpringDataJPARepository;
 
     @Override
     public Funcionario postFuncionario(Funcionario funcionario) {
         log.info("[inicia]   - FuncionarioInfraRepository - postFuncionario");
-        clienteSpringDataJPARepository.save(funcionario);
+        funcionarioSpringDataJPARepository.save(funcionario);
         log.info("[FINALIZA] - FuncionarioInfraRepository - postFuncionario");
         return funcionario;
+    }
+
+    @Override
+    public List<Funcionario> getTodosFuncionarios() {
+        log.info("[inicia]   - FuncionarioInfraRepository - getTodosFuncionarios");
+        List<Funcionario> todosFuncionarios = funcionarioSpringDataJPARepository.findAll();
+        log.info("[FINALIZA] - FuncionarioInfraRepository - getTodosFuncionarios");
+        return todosFuncionarios;
     }
 }
