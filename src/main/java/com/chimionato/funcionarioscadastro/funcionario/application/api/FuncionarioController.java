@@ -34,7 +34,7 @@ public class FuncionarioController implements FuncionarioAPI {
     @Override
     public FuncionarioDetalhadoResponse getUmFuncionarioPeloId(UUID idFuncionario) {
         log.info("[inicia]     FuncionarioController - getUmFuncionarioPeloId");
-        FuncionarioDetalhadoResponse funcionarioDetalhado = clienteService.getUmFuncionarioPeloId(idFuncionario);
+        FuncionarioDetalhadoResponse funcionarioDetalhado = funcionarioService.getUmFuncionarioPeloId(idFuncionario);
         log.info("[FINALIZA]   FuncionarioController - getUmFuncionarioPeloId");
         return funcionarioDetalhado;
     }
