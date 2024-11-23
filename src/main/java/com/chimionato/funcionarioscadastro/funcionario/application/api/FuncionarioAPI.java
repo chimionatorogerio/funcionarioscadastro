@@ -22,4 +22,6 @@ public interface FuncionarioAPI {
     @GetMapping(value = "/{idFuncionario}")
     @ResponseStatus(code = HttpStatus.OK)
     FuncionarioDetalhadoResponse getUmFuncionarioPeloId(@PathVariable UUID idFuncionario);
+
+    // iniciar implantação do delete
 }
