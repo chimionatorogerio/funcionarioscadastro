@@ -23,5 +23,5 @@ public interface FuncionarioAPI {
     @ResponseStatus(code = HttpStatus.OK)
     FuncionarioDetalhadoResponse getUmFuncionarioPeloId(@PathVariable UUID idFuncionario);
 
-    // iniciar implantação do delete
+    // iniciar implantação do método delete
 }
