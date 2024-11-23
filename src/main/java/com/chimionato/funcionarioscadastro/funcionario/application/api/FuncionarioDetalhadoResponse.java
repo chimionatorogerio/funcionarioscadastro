@@ -2,10 +2,11 @@ package com.chimionato.funcionarioscadastro.funcionario.application.api;
 
 import com.chimionato.funcionarioscadastro.funcionario.domain.Funcionario;
 import jakarta.validation.Valid;
+import lombok.Value;
 
 import java.util.UUID;
 
-@Valid
+@Value
 public class FuncionarioDetalhadoResponse {
     private UUID idFuncionario;
     private String nomeCompleto;

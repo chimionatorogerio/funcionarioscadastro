@@ -2,8 +2,10 @@ package com.chimionato.funcionarioscadastro.funcionario.infra;
 
 import com.chimionato.funcionarioscadastro.funcionario.application.repository.FuncionarioRepository;
 import com.chimionato.funcionarioscadastro.funcionario.domain.Funcionario;
+import com.chimionato.funcionarioscadastro.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -37,7 +39,7 @@ public class FuncionarioInfraRepository implements FuncionarioRepository {
         log.info("[inicia]   - FuncionarioInfraRepository - getUmFuncionarioPeloId");
         log.info("<< idCliente >> {}", idFuncionario);
         Funcionario funcionario  = funcionarioSpringDataJPARepository.findById(idFuncionario)
-                .orElseThrow(() -> new RuntimeException("Cliente não encontrado"));
+                .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Cliente não encontrado"));
         log.info("[FINALIZA] - FuncionarioInfraRepository - getUmFuncionarioPeloId");
         return funcionario;
     }
