@@ -26,4 +26,6 @@ public interface FuncionarioAPI {
     @DeleteMapping(value = "/{idFuncionario}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deletaUmFuncionarioPeloId(@PathVariable UUID idFuncionario);
+
+    // implantar patch
 }
