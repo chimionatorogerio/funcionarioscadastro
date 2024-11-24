@@ -45,3 +45,5 @@ public class Funcionario {
         this.endereco = funcionarioRequest.getEndereco();
     }
 }
+
+// CRUD FINALIZADO
