@@ -1,5 +1,6 @@
 package com.chimionato.funcionarioscadastro.funcionario.application.api;
 
+import com.chimionato.funcionarioscadastro.funcionario.domain.Funcionario;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -27,5 +28,8 @@ public interface FuncionarioAPI {
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deletaUmFuncionarioPeloId(@PathVariable UUID idFuncionario);
 
-    // implantar método patch
+    @PatchMapping(value = "/{idFuncionario}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void patchAlteraFuncionario(@PathVariable UUID idFuncionario,
+                                @Valid @RequestBody FuncionarioAlteracaoRequest funcionarioAlteracaoRequest);
 }
