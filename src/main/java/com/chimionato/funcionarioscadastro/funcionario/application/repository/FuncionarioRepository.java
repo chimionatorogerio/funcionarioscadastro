@@ -9,4 +9,5 @@ public interface FuncionarioRepository {
     Funcionario postFuncionario(Funcionario funcionario);
     List<Funcionario> getTodosFuncionarios();
     Funcionario getUmFuncionarioPeloId(UUID idFuncionario);
+    void deletaUmFuncionarioPeloId(UUID idFuncionario);
 }
