@@ -12,4 +12,5 @@ public interface FuncionarioService {
     FuncionarioResponse postFuncionario(FuncionarioRequest funcionarioRequest);
     List<FuncionarioListResponse> getTodosFuncionarios();
     FuncionarioDetalhadoResponse getUmFuncionarioPeloId(UUID idFuncionario);
+    void deletaUmFuncionarioPeloId(UUID idFuncionario);
 }
