@@ -51,7 +51,7 @@ public class FuncionarioApplicationService implements FuncionarioService {
         log.info("[inicia]   - FuncionarioApplicationService - deletaUmFuncionarioPeloId");
         log.info("[idCliente] {}", idFuncionario);
         Funcionario funcionario  = funcionarioRepository.getUmFuncionarioPeloId(idFuncionario);
-        funcionarioRepository.deletaUmFuncionarioPeloId(idFuncionario);
+        funcionarioRepository.deletaUmFuncionarioPeloId(funcionario);
         log.info("[FINALIZA] - FuncionarioApplicationService - deletaUmFuncionarioPeloId");
     }
 }
