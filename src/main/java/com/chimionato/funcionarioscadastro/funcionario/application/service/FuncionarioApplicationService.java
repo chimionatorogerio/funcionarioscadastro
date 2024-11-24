@@ -1,9 +1,6 @@
 package com.chimionato.funcionarioscadastro.funcionario.application.service;
 
-import com.chimionato.funcionarioscadastro.funcionario.application.api.FuncionarioDetalhadoResponse;
-import com.chimionato.funcionarioscadastro.funcionario.application.api.FuncionarioListResponse;
-import com.chimionato.funcionarioscadastro.funcionario.application.api.FuncionarioRequest;
-import com.chimionato.funcionarioscadastro.funcionario.application.api.FuncionarioResponse;
+import com.chimionato.funcionarioscadastro.funcionario.application.api.*;
 import com.chimionato.funcionarioscadastro.funcionario.application.repository.FuncionarioRepository;
 import com.chimionato.funcionarioscadastro.funcionario.domain.Funcionario;
 import lombok.RequiredArgsConstructor;
@@ -53,5 +50,16 @@ public class FuncionarioApplicationService implements FuncionarioService {
         Funcionario funcionario  = funcionarioRepository.getUmFuncionarioPeloId(idFuncionario);
         funcionarioRepository.deletaUmFuncionarioPeloId(funcionario);
         log.info("[FINALIZA] - FuncionarioApplicationService - deletaUmFuncionarioPeloId");
+    }
+
+    @Override
+    public void patchAlteraFuncionario(UUID idFuncionario,
+                                       FuncionarioAlteracaoRequest funcionarioAlteracaoRequest) {
+        log.info("[inicia]   - FuncionarioApplicationService - patchAlteraFuncionario");
+        log.info("[idCliente] {}", idFuncionario);
+        Funcionario funcionario  = funcionarioRepository.getUmFuncionarioPeloId(idFuncionario);
+        funcionario.altera(funcionarioAlteracaoRequest);
+        funcionarioRepository.postFuncionario(funcionario);
+        log.info("[FINALIZA] - FuncionarioApplicationService - patchAlteraFuncionario");
     }
 }
