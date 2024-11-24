@@ -1,9 +1,7 @@
 package com.chimionato.funcionarioscadastro.funcionario.application.service;
 
-import com.chimionato.funcionarioscadastro.funcionario.application.api.FuncionarioDetalhadoResponse;
-import com.chimionato.funcionarioscadastro.funcionario.application.api.FuncionarioListResponse;
-import com.chimionato.funcionarioscadastro.funcionario.application.api.FuncionarioRequest;
-import com.chimionato.funcionarioscadastro.funcionario.application.api.FuncionarioResponse;
+import com.chimionato.funcionarioscadastro.funcionario.application.api.*;
+import jakarta.validation.Valid;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,4 +11,5 @@ public interface FuncionarioService {
     List<FuncionarioListResponse> getTodosFuncionarios();
     FuncionarioDetalhadoResponse getUmFuncionarioPeloId(UUID idFuncionario);
     void deletaUmFuncionarioPeloId(UUID idFuncionario);
+    void patchAlteraFuncionario(UUID idFuncionario, @Valid FuncionarioAlteracaoRequest funcionarioAlteracaoRequest);
 }
