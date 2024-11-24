@@ -1,6 +1,7 @@
 package com.chimionato.funcionarioscadastro.funcionario.application.api;
 
 import com.chimionato.funcionarioscadastro.funcionario.application.service.FuncionarioService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,5 +46,14 @@ public class FuncionarioController implements FuncionarioAPI {
         log.info("[idCliente] {}", idFuncionario);
         funcionarioService.deletaUmFuncionarioPeloId(idFuncionario);
         log.info("[FINALIZA]   FuncionarioController - deletaUmFuncionarioPeloId");
+    }
+
+    @Override
+    public void patchAlteraFuncionario(UUID idFuncionario,
+                                       @Valid FuncionarioAlteracaoRequest funcionarioAlteracaoRequest) {
+        log.info("[inicia]     FuncionarioController - patchAlteraFuncionario");
+        log.info("[idCliente] {}", idFuncionario);
+        funcionarioService.patchAlteraFuncionario(idFuncionario, funcionarioAlteracaoRequest);
+        log.info("[FINALIZA]   FuncionarioController - patchAlteraFuncionario");
     }
 }
