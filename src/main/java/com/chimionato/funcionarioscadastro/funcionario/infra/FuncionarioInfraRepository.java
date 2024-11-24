@@ -39,7 +39,7 @@ public class FuncionarioInfraRepository implements FuncionarioRepository {
         log.info("[inicia]   - FuncionarioInfraRepository - getUmFuncionarioPeloId");
         log.info("<< idCliente >> {}", idFuncionario);
         Funcionario funcionario  = funcionarioSpringDataJPARepository.findById(idFuncionario)
-                .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Cliente não encontrado"));
+                .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Funcionário não encontrado"));
         log.info("[FINALIZA] - FuncionarioInfraRepository - getUmFuncionarioPeloId");
         return funcionario;
     }
