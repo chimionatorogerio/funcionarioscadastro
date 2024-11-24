@@ -27,5 +27,5 @@ public interface FuncionarioAPI {
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deletaUmFuncionarioPeloId(@PathVariable UUID idFuncionario);
 
-    // implantar patch
+    // implantar método patch
 }
