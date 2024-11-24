@@ -1,5 +1,6 @@
 package com.chimionato.funcionarioscadastro.funcionario.domain;
 
+import com.chimionato.funcionarioscadastro.funcionario.application.api.FuncionarioAlteracaoRequest;
 import com.chimionato.funcionarioscadastro.funcionario.application.api.FuncionarioRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -29,6 +30,14 @@ public class Funcionario {
     private String endereco;
 
     public Funcionario(FuncionarioRequest funcionarioRequest) {
+        this.nomeCompleto = funcionarioRequest.getNomeCompleto();
+        this.designacao = funcionarioRequest.getDesignacao();
+        this.salario = funcionarioRequest.getSalario();
+        this.telefone = funcionarioRequest.getTelefone();
+        this.endereco = funcionarioRequest.getEndereco();
+    }
+
+    public void altera(FuncionarioAlteracaoRequest funcionarioRequest) {
         this.nomeCompleto = funcionarioRequest.getNomeCompleto();
         this.designacao = funcionarioRequest.getDesignacao();
         this.salario = funcionarioRequest.getSalario();
