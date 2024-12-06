@@ -1,6 +1,5 @@
 package com.chimionato.funcionarioscadastro.funcionario.application.api;
 
-import com.chimionato.funcionarioscadastro.funcionario.domain.Funcionario;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
